@@ -1,15 +1,15 @@
-FROM buster
+FROM julia:buster
 
 RUN set -eux; \
   apt-get update; \
   apt-get install -y --no-install-recommends \
-    bash
+    bash \
     build-essential \
-    libatomic1 \
+    cmake \
     gfortran \
+    libatomic1 \
     perl \
     wget \
-    cmake \
     ; \
   rm -rf /var/lib/apt/lists/*
 
