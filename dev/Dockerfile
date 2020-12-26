@@ -10,6 +10,7 @@ RUN set -eux; \
     git \
     libatomic1 \
     perl \
+    python \
     python3 \
     wget \
     ; \
@@ -17,6 +18,8 @@ RUN set -eux; \
 
 RUN git clone https://github.com/julialang/julia; \
   cd julia; \
-  make test-path;
+  make test-path; \
+  cd ..; \
+  rm -rf julia
 
 CMD ["bash"]
